@@ -213,7 +213,7 @@ footer:
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
   # Set to `false` to disable the copyright statement.
-  # copyright: iy88 all rights reserved
+  copyright: 
 
   # Powered by Hexo & NexT
   powered: true
