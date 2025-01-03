@@ -23,6 +23,8 @@ if (hexo-config('local_search.enable') or hexo-config('algolia_search.enable')) 
 
   .search-popup {
     background: var(--card-bg-color);
+    // background: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(15px);
     border-radius: 5px;
     height: 80%;
     margin: auto;
@@ -58,7 +60,8 @@ if (hexo-config('local_search.enable') or hexo-config('algolia_search.enable')) 
       background: $gainsboro;
       if (hexo-config('darkmode')) {
         @media (prefers-color-scheme: dark) {
-          background: $grey-dim;
+          // background: $grey-dim;
+          background: rgba(0, 0, 0, 0.5);
         }
       }
       border-top-left-radius: 5px;
@@ -93,7 +96,11 @@ if (hexo-config('local_search.enable') or hexo-config('algolia_search.enable')) 
           display: none;
         }
       }
+      ul,ol{
+        overflow: unset;
+      }
     }
+
 
     .search-result-list {
       margin: 0 5px;

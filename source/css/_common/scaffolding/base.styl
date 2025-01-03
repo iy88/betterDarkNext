@@ -33,6 +33,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  overflow-x: auto;
+  overflow-y: hidden; 
   font-family: $font-family-headings;
   font-weight: bold;
   line-height: 1.5;
@@ -47,6 +49,8 @@ for $headline in (1 .. 6) {
 
 p {
   margin: 0 0 20px;
+  overflow-x: auto;
+  overflow-y: hidden; 
 }
 
 a {
@@ -62,6 +66,68 @@ a {
     border-bottom-color: var(--link-hover-color);
     color: var(--link-hover-color);
   }
+}
+.post-body a:not(.btn),  .post-copyright a, .post-tags a, .post-header a:not(.post-title-link), .footer a{
+  border-bottom: 1px solid var(--link-color);
+  color: var(--link-color);
+  // For a:not(:any-link)
+  cursor: pointer;
+  outline: 0;
+  text-decoration: none;
+  word-wrap();
+  position: relative;
+
+  &::before {
+    background: var(--link-color);
+    bottom: 0;
+    content: '';
+    height: 2px;
+    // Fix issue #75
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform $transition-ease;
+    width: 100%;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    color: var(--link-hover-color);
+  }
+}
+
+.page-number:not(.current), .extend{
+  border-top: 1px solid var(--link-color);
+  color: var(--link-color);
+  // For a:not(:any-link)
+  cursor: pointer;
+  outline: 0;
+  text-decoration: none;
+  word-wrap();
+  position: relative;
+
+  &::before {
+    background: var(--link-color);
+    top: 0;
+    content: '';
+    height: 2px;
+    // Fix issue #75
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform $transition-ease;
+    width: 100%;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    color: var(--link-hover-color);
+  }
+}
+
+ul, ol{
+  overflow-x: auto;
+  overflow-y: hidden; 
 }
 
 iframe, img, video, embed {

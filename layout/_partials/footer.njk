@@ -2,7 +2,7 @@
   <div class="beian">
     {{- next_url('https://beian.miit.gov.cn', theme.footer.beian.icp + ' ') }}
     {%- if theme.footer.beian.gongan_icon_url %}
-      <img src="{{ url_for(theme.footer.beian.gongan_icon_url) }}" alt="">
+      <img src="{{ url_for(theme.footer.beian.gongan_icon_url) }}" alt="" style="height: 17px;vertical-align: text-bottom;">
     {%- endif %}
     {%- if theme.footer.beian.gongan_id and theme.footer.beian.gongan_num %}
       {{- next_url('https://beian.mps.gov.cn/#/query/webSearch?code=' + theme.footer.beian.gongan_id, theme.footer.beian.gongan_num + ' ') }}
@@ -80,6 +80,9 @@
   <div class="powered-by">
     {%- set next_site = 'https://theme-next.js.org' if theme.scheme === 'Gemini' else 'https://theme-next.js.org/' + theme.scheme | lower + '/' %}
     {{- __('footer.powered', next_url('https://hexo.io', 'Hexo') + ' & ' + next_url(next_site, 'NexT.' + theme.scheme)) }}
+    <p>
+      本网站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" rel="noreferrer" target="_blank"><img src="/images/upyun.png" style="height: 2.1em;vertical-align: bottom;display: inline" /></a>提供CDN加速/云存储服务
+    </p>
   </div>
 {%- endif %}
 

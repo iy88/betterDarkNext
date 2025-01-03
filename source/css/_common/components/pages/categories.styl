@@ -20,6 +20,12 @@
   .category-list-count {
     font-size: $font-size-smallest;
     badge();
+    if (hexo-config('darkmode')) {
+      @media (prefers-color-scheme: dark) {
+        background: #f0f6fcd4;
+        color: rgba(0,0,0,0.8);
+      }
+    }
   }
 
   .category-list-child {
