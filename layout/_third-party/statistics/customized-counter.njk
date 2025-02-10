@@ -1,0 +1,8 @@
+{%- if theme.customized_count.enable %}
+<script>
+if ("{{ theme.customized_count.expected_hostname }}" == "" ||  window.location.hostname.indexOf("{{ theme.customized_count.expected_hostname }}") !== -1) { // check for expected site's hostname
+  window.customized_count_ENABLE=true;
+}
+</script>  
+<script{{ pjax }} async src="{{theme.customized_count.url}}"></script>
+{%- endif %}

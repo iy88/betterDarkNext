@@ -914,3 +914,12 @@ images: images
 
 # upyun cdn icon
 upyun: false
+
+# customized visit counting service
+customized_count:
+  enable: false
+  total_visitors: true
+  total_views: true
+  post_views: true
+  url:
+  expected_hostname:  
