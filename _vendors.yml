@@ -125,7 +125,7 @@ local_search:
   name: hexo-generator-searchdb
   version: 1.4.1
   file: dist/search.js
-  integrity: sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=
+  integrity: sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=
 pdfobject:
   name: pdfobject
   version: 2.3.0
