@@ -399,6 +399,8 @@ reading_progress:
   reversed: false
   color: "#37c6c0"
   height: 3px
+  # reading progress save
+  save_progress: true
 
 # Bookmark Support
 bookmark:

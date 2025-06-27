@@ -10,6 +10,7 @@
   {{ partial('_third-party/statistics/index.njk', {}, {cache: theme.cache.enable}) }}
   {%- include '_third-party/math/index.njk' -%}
   {%- include '_third-party/quicklink.njk' -%}
+  {{ partial('_third-party/progress/index.njk', {}, {cache: theme.cache.enable}) }}
   {{- next_inject('head') }}
   <noscript>
     <link rel="stylesheet" href="{{ url_for(theme.css) }}/noscript.css">
