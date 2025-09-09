@@ -17,13 +17,13 @@
 
 > NexT 是一款风格优雅的高质量 [Hexo](https://hexo.io) 主题，自点点滴滴中用爱雕琢而成。
 
-[![NPM version](https://img.shields.io/npm/v/hexo-theme-next?color=red&logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-next)
-[![NPM Downloads](https://img.shields.io/npm/dm/hexo-theme-next?logo=npm&style=flat-square)](https://www.npmjs.com/package/hexo-theme-next)
-[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.3.0-blue?style=flat-square&logo=hexo)](https://hexo.io)
-[![License](https://img.shields.io/badge/license-%20AGPL-orange?style=flat-square&logo=gnu)](https://github.com/next-theme/hexo-theme-next/blob/master/LICENSE.md)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/next-theme/hexo-theme-next/linter.yml?branch=master&label=test&logo=github&style=flat-square)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ALinter)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/next-theme/hexo-theme-next/tester.yml?branch=master&logo=github&style=flat-square)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ATester)
-[![Coverage Status](https://img.shields.io/coveralls/github/next-theme/hexo-theme-next?logo=coveralls&style=flat-square)](https://coveralls.io/github/next-theme/hexo-theme-next)
+[![NPM version](https://img.shields.io/npm/v/hexo-theme-next?color=red&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/hexo-theme-next)
+[![NPM Downloads](https://img.shields.io/npm/dm/hexo-theme-next?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/hexo-theme-next)
+[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.3.0-blue?style=for-the-badge&logo=hexo)](https://hexo.io)
+[![License](https://img.shields.io/badge/license-%20AGPL-orange?style=for-the-badge&logo=gnu)](https://github.com/next-theme/hexo-theme-next/blob/master/LICENSE.md)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/next-theme/hexo-theme-next/linter.yml?branch=master&label=test&logo=github&style=for-the-badge)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ALinter)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/next-theme/hexo-theme-next/tester.yml?branch=master&logo=github&style=for-the-badge)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ATester)
+[![Coverage Status](https://img.shields.io/coveralls/github/next-theme/hexo-theme-next?logo=coveralls&style=for-the-badge)](https://coveralls.io/github/next-theme/hexo-theme-next)
 
 ## 即时预览
 
@@ -116,7 +116,8 @@ git pull
 
 * **Telegram 群组（中文）**：[点击此处加入！](https://t.me/theme_next_cn)
 * **Discord 服务器**：[加入我们的 Discord！](https://discord.gg/qmkgkY3jaG)
-* **Gitter**：[加入我们的 Gitter 聊天！][gitter-url]
+* **Gitter**：[加入我们的 Gitter 聊天！]
+* **ChatGPT**: [NexT Mentor][gpt-url]
 
 ## 反馈
 
@@ -184,6 +185,7 @@ NexT 特别感谢这些支持我们核心基础设施的优质服务：
 [awesome-next-url]: https://github.com/next-theme/awesome-next
 [discussions-url]: https://github.com/next-theme/hexo-theme-next/discussions
 [gitter-url]: https://app.gitter.im/#/room/#next:gitter.im
+[gpt-url]: https://chatgpt.com/g/g-68286c2fc1f48191aee3e87c94a89431-next-mentor
 [i18n-url]: https://crowdin.com/project/hexo-theme-next
 
 [issues-bug-url]: https://github.com/next-theme/hexo-theme-next/issues/new?assignees=&labels=Bug&template=bug-report.md
