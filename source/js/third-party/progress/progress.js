@@ -2,11 +2,11 @@ class ReadingProgressManager {
   constructor(options = {}) {
     // 默认配置
     this.config = {
-      storageKey: 'readingProgressData', // localStorage存储键名
-      throttleDelay: 300,               // 滚动事件节流延迟(毫秒)
-      saveDebounceDelay: 1000,          // 保存操作防抖延迟(毫秒)
-      maxEntries: 100,                  // 最大保存条目数
-      purgeThreshold: 30 * 24 * 60 * 60 * 1000, // 自动清理过期数据的时间阈值(30天)
+      storageKey       : 'readingProgressData', // localStorage存储键名
+      throttleDelay    : 300, // 滚动事件节流延迟(毫秒)
+      saveDebounceDelay: 1000, // 保存操作防抖延迟(毫秒)
+      maxEntries       : 100, // 最大保存条目数
+      purgeThreshold   : 30 * 24 * 60 * 60 * 1000, // 自动清理过期数据的时间阈值(30天)
       ...options
     };
     this.throttleTimer = null;
@@ -58,7 +58,6 @@ class ReadingProgressManager {
   // 更新当前阅读进度
   updateProgress() {
     this.lastScrollTop = window.scrollY;
-    console.log(new Date().getTime(), "updated", this.lastScrollTop);
     // 使用防抖技术减少保存频率
     if (this.debounceTimer) clearTimeout(this.debounceTimer);
     this.debounceTimer = setTimeout(() => {
@@ -74,7 +73,6 @@ class ReadingProgressManager {
     try {
       // 获取现有进度数据
       const progressData = this.getProgressData();
-      console.log(new Date().getTime(), "saved", scrollTop);
       // 更新或添加当前页面进度
       progressData[url] = {
         scrollTop,
@@ -89,7 +87,7 @@ class ReadingProgressManager {
       // 保存回localStorage
       localStorage.setItem(this.config.storageKey, JSON.stringify(progressData));
     } catch (error) {
-      console.error('保存阅读进度失败:', error);
+      console.warn('保存阅读进度失败:', error);
     }
   }
 
@@ -102,61 +100,47 @@ class ReadingProgressManager {
       // 检查是否有当前页面的保存进度
       if (progressData[url]) {
         const { scrollTop } = progressData[url];
-        console.log(new Date().getTime(), "restored", scrollTop);
         if (this.originalHash) {
-          console.log(new Date().getTime(), "check hash", this.originalHash);
-          let targetElement = document.querySelector("#" + decodeURI(this.originalHash.slice(1)))
+          const targetElement = document.querySelector('#' + decodeURI(this.originalHash.slice(1)));
           // 如果找到对应的元素，使用其位置
           if (targetElement) {
             const rect = targetElement.getBoundingClientRect();
-            let targetScrollTop = window.scrollY + rect.top;
+            const targetScrollTop = window.scrollY + rect.top;
             if (targetScrollTop >= scrollTop) { // hash在后才跳转
-              console.log("history behind hash");
               requestAnimationFrame(() => {
                 window.scrollTo(0, targetScrollTop);
               });
-              history.replaceState(null, null, window.location.pathname + window.location.search + "#" + decodeURI(this.originalHash.slice(1)));
+              history.replaceState(null, null, window.location.pathname + window.location.search + '#' + decodeURI(this.originalHash.slice(1)));
             } else {
-              console.log("hash behind history");
               requestAnimationFrame(() => {
                 window.scrollTo(0, scrollTop);
               });
             }
           } else {
-            console.log("wrong hash");
             requestAnimationFrame(() => {
               window.scrollTo(0, scrollTop);
             });
           }
         } else {
           // 使用requestAnimationFrame确保页面完全加载后再滚动
-          console.log("no hash, failing to history");
           requestAnimationFrame(() => {
             window.scrollTo(0, scrollTop);
           });
         }
-      }
-      else if (this.originalHash) {
-        console.log("hash only");
-        console.log(new Date().getTime(), "check hash", this.originalHash);
-        let targetElement = document.querySelector("#" + decodeURI(this.originalHash.slice(1)))
+      } else if (this.originalHash) {
+        const targetElement = document.querySelector('#' + decodeURI(this.originalHash.slice(1)));
         // 如果找到对应的元素，使用其位置
         if (targetElement) {
           const rect = targetElement.getBoundingClientRect();
-          let targetScrollTop = window.scrollY + rect.top;
+          const targetScrollTop = window.scrollY + rect.top;
           requestAnimationFrame(() => {
             window.scrollTo(0, targetScrollTop);
           });
           history.replaceState(null, null, window.location.pathname + window.location.search + this.originalHash);
-
-        } else {
-          requestAnimationFrame(() => {
-            window.scrollTo(0, scrollTop);
-          });
         }
       }
     } catch (error) {
-      console.error('恢复阅读进度失败:', error);
+      console.warn('恢复阅读进度失败:', error);
     }
   }
 
@@ -171,7 +155,7 @@ class ReadingProgressManager {
         localStorage.setItem(this.config.storageKey, JSON.stringify(progressData));
       }
     } catch (error) {
-      console.error('清除阅读进度失败:', error);
+      console.warn('清除阅读进度失败:', error);
     }
   }
 
@@ -180,7 +164,7 @@ class ReadingProgressManager {
     try {
       localStorage.removeItem(this.config.storageKey);
     } catch (error) {
-      console.error('清除所有阅读进度失败:', error);
+      console.warn('清除所有阅读进度失败:', error);
     }
   }
 
@@ -196,7 +180,7 @@ class ReadingProgressManager {
       const data = localStorage.getItem(this.config.storageKey);
       return data ? JSON.parse(data) : {};
     } catch (error) {
-      console.error('读取阅读进度数据失败:', error);
+      console.warn('读取阅读进度数据失败:', error);
       return {};
     }
   }
@@ -232,7 +216,7 @@ class ReadingProgressManager {
 
         localStorage.setItem(this.config.storageKey, JSON.stringify(progressData));
       } catch (error) {
-        console.error('定期清理阅读进度失败:', error);
+        console.warn('定期清理阅读进度失败:', error);
       }
     }, 24 * 60 * 60 * 1000); // 每天执行一次
   }
@@ -240,12 +224,12 @@ class ReadingProgressManager {
 
 // 使用示例
 document.addEventListener('DOMContentLoaded', () => {
-  history.scrollRestoration = "manual"; // prevent default effect;
+  history.scrollRestoration = 'manual'; // prevent default effect;
   // 初始化阅读进度管理器
   const progressManager = new ReadingProgressManager({
-    storageKey: 'ReadingProgress', // 自定义存储键名
-    throttleDelay: 200,             // 调整节流延迟
-    maxEntries: 100                  // 限制最多保存100个页面的进度
+    storageKey   : 'ReadingProgress', // 自定义存储键名
+    throttleDelay: 200, // 调整节流延迟
+    maxEntries   : 100 // 限制最多保存100个页面的进度
   });
 
   // 启动进度管理
@@ -254,6 +238,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // 可选：提供手动清除当前页面进度的方法
   window.clearCurrentProgress = () => {
     progressManager.clearProgress();
-    console.log('当前页面阅读进度已清除');
   };
 });
