@@ -65,6 +65,11 @@ if (hexo-config('local_search.enable') or hexo-config('algolia_search.enable')) 
           background: rgba(0, 0, 0, 0.5);
         }
       }
+      if (hexo-config('lightdark.enable')) {
+        +light-dark-block() {
+          background: light-dark($gainsboro, $grey-dim);
+        }
+      }
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       display: flex;

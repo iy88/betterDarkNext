@@ -62,6 +62,25 @@ function getVendors({ name, alias, version, file, minified, local, custom }) {
   };
 }
 
+// `url.parse` is deprecated (DEP0169). Use the WHATWG URL API instead.
+// A value that is not an absolute URL (e.g. a relative path, `mailto:`, `tel:`)
+// makes `new URL()` throw; report it with a null protocol/hostname, which is
+// what the old `url.parse()` returned for relative paths.
+function parseURL(value) {
+  try {
+    const { protocol, hostname } = new URL(value);
+    return { protocol, hostname: hostname || null };
+  } catch {
+    return { protocol: null, hostname: null };
+  }
+}
+
+// Origin (`protocol//host`) of an absolute URL, or '' when there is none.
+function getOrigin(value) {
+  const { protocol, hostname } = parseURL(value);
+  return protocol && hostname ? protocol + '//' + hostname : '';
+}
+
 const points = {
   views: [
     'head',
@@ -86,5 +105,7 @@ module.exports = {
   resolve,
   highlightTheme,
   getVendors,
+  parseURL,
+  getOrigin,
   points
 };

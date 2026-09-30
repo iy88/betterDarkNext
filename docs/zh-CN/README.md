@@ -19,7 +19,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/hexo-theme-next?color=red&logo=npm&style=for-the-badge)](https://www.npmjs.com/package/hexo-theme-next)
 [![NPM Downloads](https://img.shields.io/npm/dm/hexo-theme-next?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/hexo-theme-next)
-[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=5.3.0-blue?style=for-the-badge&logo=hexo)](https://hexo.io)
+[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=7.0.0-blue?style=for-the-badge&logo=hexo)](https://hexo.io)
 [![License](https://img.shields.io/badge/license-%20AGPL-orange?style=for-the-badge&logo=gnu)](https://github.com/next-theme/hexo-theme-next/blob/master/LICENSE.md)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/next-theme/hexo-theme-next/linter.yml?branch=master&label=test&logo=github&style=for-the-badge)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ALinter)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/next-theme/hexo-theme-next/tester.yml?branch=master&logo=github&style=for-the-badge)](https://github.com/next-theme/hexo-theme-next/actions?query=workflow%3ATester)
@@ -148,9 +148,9 @@ NexT 特别感谢这些支持我们核心基础设施的优质服务：
 
 <a href="https://www.netlify.com">
   <picture>
-    <source media="(prefers-color-scheme: dark)" height="40" srcset="https://www.netlify.com/v3/img/components/full-logo-dark.svg">
-    <source media="(prefers-color-scheme: light)" height="40" srcset="https://www.netlify.com/v3/img/components/full-logo-light.svg">
-    <img alt="Netlify Logo" height="40" src="https://www.netlify.com/v3/img/components/full-logo-light.svg">
+    <source media="(prefers-color-scheme: dark)" height="40" srcset="https://raw.githubusercontent.com/netlify/netlify-example-styles/main/public/images/logo-netlify-small-fullcolor-darkmode.svg">
+    <source media="(prefers-color-scheme: light)" height="40" srcset="https://raw.githubusercontent.com/netlify/netlify-example-styles/main/public/images/logo-netlify-small-fullcolor-lightmode.svg">
+    <img alt="Netlify Logo" height="40" src="https://raw.githubusercontent.com/netlify/netlify-example-styles/main/public/images/logo-netlify-small-fullcolor-lightmode.svg">
   </picture>
 </a>
 
